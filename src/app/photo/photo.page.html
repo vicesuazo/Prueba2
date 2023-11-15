@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>Photo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="takeSelfie()">Tomar Selfie</ion-button>
+
+  <ion-img [src]="selfieData" *ngIf="selfieData"></ion-img>
+  
+</ion-content>

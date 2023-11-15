@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>Restablecer</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Restablecer contraseña</ion-card-title>
+    </ion-card-header>
+  <ion-item>
+    <ion-label position="floating">Nombre de Usuario</ion-label>
+    <ion-input [(ngModel)]="usuario" name="username" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nueva Contraseña</ion-label>
+    <ion-input [(ngModel)] ="newPassword" name="newPassword" type="password" required></ion-input>
+  </ion-item>
+</ion-card>
+  <ion-button color="warning" expand="full" shape="round" type="ngSubmit" (click)="resetPassword()">Restablecer Contraseña</ion-button>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  
+
+  <div class="scanner-shell" [hidden]="!hasDevices">
+    <zxing-scanner
+    #scanner
+    start="true"
+    [device]="currentDevice"
+    (scanSuccess)="handleQrCodeResult($event)"
+    [formats]="formats"
+  ></zxing-scanner>
+  
+    <section class="results" *ngIf="qrResultString">
+      <small>Result</small>
+      <strong>{{ qrResultString}}</strong>
+    </section>
+  
+  </div>
+</ion-content>
